@@ -182,8 +182,8 @@ AI retrieves internal DevOps documentation.
 ### 1️⃣ Start Infrastructure
 
 ```bash
-docker-compose up -d 
-
+docker-compose up -d
+```
 This starts:
 
 PostgreSQL (PgVector)
@@ -193,11 +193,15 @@ Redis
 Kafka
 
 2️⃣ Set Environment Variables
+```bash
 export OPENAI_API_KEY=your_key
 export JWT_SECRET=your_secret
+```
 
 3️⃣ Build Project
+```bash
 mvn clean install
+```
 
 4️⃣ Start Services
 
