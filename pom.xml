@@ -1,0 +1,15 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bhaskar.saas</groupId>
+    <artifactId>saas-ai-platform</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>ai-service</module>
+        <module>auth-service</module>
+        <module>ingestion-service</module>
+        <module>mcp-tool-server</module>
+    </modules>
+</project>

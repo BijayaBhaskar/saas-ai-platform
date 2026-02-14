@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: ai-service
+          uri: http://ai-service:8082
+          predicates:
+            - Path=/ai/**
+        - id: auth-service
+          uri: http://auth-service:8081
+          predicates:
+            - Path=/auth/**
+        - id: ingestion-service
+          uri: http://ingestion-service:8083
+          predicates:
+            - Path=/ingest/**
+        - id: mcp-service
+          uri: http://mcp-tool-server:8084
+          predicates:
+            - Path=/tools/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

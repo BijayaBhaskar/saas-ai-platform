@@ -1,0 +1,33 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ingestion-service
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/ai
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+
+    embedding:
+      openai:
+        api-key: ${OPENAI_API_KEY}
+
+    vectorstore:
+      pgvector:
+        initialize-schema: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
